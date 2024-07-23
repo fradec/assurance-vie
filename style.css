@@ -17,6 +17,21 @@ h1 {
     text-align: center;
 }
 
+button#reset-button {
+    display: block;
+    margin: 0 auto 20px;
+    padding: 10px 20px;
+    background-color: #ff4b4b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button#reset-button:hover {
+    background-color: #ff1a1a;
+}
+
 .form-group {
     margin-bottom: 15px;
 }
@@ -27,8 +42,9 @@ label {
 }
 
 input[type="number"], select {
-    width: 100%;
+    width: calc(100% - 10px);
     padding: 8px;
+    margin-right: 10px;
     box-sizing: border-box;
 }
 

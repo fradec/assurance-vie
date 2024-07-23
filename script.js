@@ -1,12 +1,15 @@
 document.getElementById('calculator-form').addEventListener('input', calculate);
+document.getElementById('reset-button').addEventListener('click', resetForm);
 
 function calculate() {
     const valueA = parseFloat(document.getElementById('value-a').value) || 0;
     const valueB = parseFloat(document.getElementById('value-b').value) || 0;
-    const profits = parseFloat(document.getElementById('profits').value) || (valueA - valueB);
+    const profits = valueA - valueB;
     const duration = document.getElementById('duration').value;
     const beforeSep2017 = document.getElementById('before-sep-2017').checked;
     const tmi = parseFloat(document.getElementById('tmi').value) || 0;
+
+    document.getElementById('profits').value = profits;
 
     let integrationResult, forfaitaireResult;
 
@@ -41,6 +44,12 @@ function calculate() {
         }
     }
 
-    document.getElementById('result-integration').innerText = `Intégration des produits à l'impôt sur le revenu: ${integrationResult.toFixed(2)} €`;
-    document.getElementById('result-forfaitaire').innerText = `Prélèvement forfaitaire: ${forfaitaireResult.toFixed(2)} €`;
+    document.getElementById('result-integration').innerText = `Taxe via intégration des produits à l'impôt sur le revenu : ${integrationResult.toFixed(2)} €`;
+    document.getElementById('result-forfaitaire').innerText = `Taxe via prélèvement forfaitaire : ${forfaitaireResult.toFixed(2)} €`;
+}
+
+function resetForm() {
+    document.getElementById('calculator-form').reset();
+    document.getElementById('result-integration').innerText = '';
+    document.getElementById('result-forfaitaire').innerText = '';
 }

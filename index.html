@@ -9,6 +9,7 @@
 <body>
     <div class="container">
         <h1>Assurance Vie Calculator</h1>
+        <button id="reset-button">Reset</button>
         <form id="calculator-form">
             <div class="form-group">
                 <label for="value-b">Montant total des primes versées :</label>
@@ -19,23 +20,21 @@
                 <input type="number" id="value-a" name="value-a">
             </div>
             <div class="form-group">
-                <label for="profits">Montant des bénéfices:</label>
-                <input type="number" id="profits" name="profits">
+                <label for="profits">Montant des bénéfices :</label>
+                <input type="number" id="profits" name="profits" readonly>
             </div>
             <div class="form-group">
-                <label for="duration">Durée du contrat:</label>
+                <label for="duration">Durée du contrat :</label>
                 <select id="duration" name="duration">
                     <option value="0-4">De 0 à 4 ans</option>
                     <option value="4-8">De 4 à 8 ans</option>
                     <option value="8+">Au-delà de 8 ans</option>
                 </select>
-            </div>
-            <div class="form-group">
-                <label for="before-sep-2017">Contrat débuté avant le 27 septembre 2017:</label>
+                <label for="before-sep-2017">Contrat débuté avant le 27 septembre 2017 :</label>
                 <input type="checkbox" id="before-sep-2017" name="before-sep-2017">
             </div>
             <div class="form-group">
-                <label for="tmi">TMI (Taux Marginal d'Imposition):</label>
+                <label for="tmi">TMI (Taux Marginal d'Imposition) :</label>
                 <input type="number" id="tmi" name="tmi">
             </div>
         </form>
